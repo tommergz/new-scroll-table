@@ -15,9 +15,11 @@ const App = ({ columns, rows }) => {
   useEffect(() => {
     function makeTableData(w, h) {
       return new Array(h).fill(0).map((_, row) => {
-        return new Array(w).fill(0).map((_, col) => {
-          return '';
-        });
+        const obj = {}
+        for(let i = 0; i < w; i++) {
+          obj[i] = i === 0 ? row : i
+        }
+        return obj;
       });
     }
     const tableData = makeTableData(columns, rows)
@@ -46,7 +48,7 @@ const App = ({ columns, rows }) => {
           <tr
             style={{ height: 40 }}
             key={start + rowIndex}
-          >{row.map((text, colIndex) => (
+          >{Object.values(row).map((text, colIndex) => (
             <td key={start + '' + rowIndex + colIndex}>{text}</td>
           ))}</tr>
         ))}
