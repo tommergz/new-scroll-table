@@ -5,7 +5,7 @@ export const Grid = ({ columns, rows, rowHeight }) => {
   const rootRef = useRef(null);
   const [start, setStart] = useState(0);
   const [table, setTable] = useState([]);
-  const timeOut = 500
+  const timeOut = 100
   
   function getTopHeight() {
     return rowHeight * start;
