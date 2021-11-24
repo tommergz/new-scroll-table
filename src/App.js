@@ -26,10 +26,9 @@ const App = ({ columns, rows }) => {
   
   useEffect(() => {
     function onScroll(e) {
-      setStart(Math.min(
-        table.length - 10 - 1,
+      setStart(
         Math.floor(e.target.scrollTop / 40)
-      ));
+      );
     }
     rootRef.current.addEventListener('scroll', onScroll);
 
