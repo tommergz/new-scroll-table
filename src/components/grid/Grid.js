@@ -19,7 +19,7 @@ export const Grid = ({ columns, rows, rowHeight }) => {
       return new Array(h).fill(0).map((_, row) => {
         const obj = {}
         for(let i = 0; i < w; i++) {
-          obj[i] = i === 0 ? row : i
+          obj[i] = i === 0 ? row : null
         }
         return obj;
       });
